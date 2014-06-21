@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <!--
+    <parameters>
+        <parameter key="paco_cors.example.class">Paco\Bundle\CorsBundle\Example</parameter>
+    </parameters>
+
+    <services>
+        <service id="paco_cors.example" class="%paco_cors.example.class%">
+            <argument type="service" id="service_id" />
+            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>
+        </service>
+    </services>
+    -->
+    <parameters>
+        <parameter key="paco_cors.response_listener.class">Paco\Bundle\CorsBundle\EventSubscribers\CorsSubscriber</parameter>
+    </parameters>
+    <services>
+        <service id="paco_cors.response_listener" class="%paco_cors.response_listener.class%">
+            <tag name="kernel.event_subscriber"></tag>
+            <argument>%paco_cors.allowed_origin%</argument>
+            <argument>%paco_cors.allowed_methods%</argument>
+            <argument>%paco_cors.allowed_headers%</argument>
+            <argument>%paco_cors.max_age%</argument>
+            <argument>%paco_cors.exposed_headers%</argument>
+        </service>
+    </services>
+</container>

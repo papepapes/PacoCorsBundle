@@ -1,0 +1,22 @@
+{
+    "name": "papepapes/pacocorsbundle",
+    "description": "Enable CORS inside your Symfony2 project",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "keywords": ["symfony", "php", "REST", "CORS","Same-Origin", "AJAX"],
+    "authors": [
+        {
+            "name": "papepapes",
+            "email": "papepapes@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "~2.0"
+    },
+    "autoload": {
+        "psr-0": { "Paco\\Bundle": "" }
+     },
+     "target-dir": "Paco/Bundle"
+}
